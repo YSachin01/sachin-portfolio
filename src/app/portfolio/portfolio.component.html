@@ -1,0 +1,27 @@
+<div class="sticky-header" >
+  <app-header (themeToggle)="onToggleTheme($event)"></app-header>
+</div>
+<div
+  *ngFor="let component of components; let i = index"
+  [ngClass]="{
+    'bg-dark text-white': !toggleState && i % 2 !== 0,
+    'text-white': !toggleState,         
+    'text-black': toggleState 
+  }"
+  [style.background]="
+    toggleState && i % 2 === 0 ? '#e2e2e2' :
+    toggleState && i % 2 !== 0 ? 'white' :
+    !toggleState && i % 2 === 0 ? 'rgb(36, 43, 46)' : ''
+  "
+>
+    <ng-container [ngSwitch]="component">
+       <!-- <app-header [ngClass]="{'sticky-header': toggleState}" *ngSwitchCase="'header'" (themeToggle)="onToggleTheme($event)"></app-header> -->
+
+      <app-home *ngSwitchCase="'home'" (themeToggle)="onToggleTheme($event)"></app-home>
+      <app-about *ngSwitchCase="'about'" (themeToggle)="onToggleTheme($event)"></app-about>
+      <app-experience *ngSwitchCase="'experience'" (themeToggle)="onToggleTheme($event)"></app-experience>
+      <app-skills *ngSwitchCase="'skills'" (themeToggle)="onToggleTheme($event)"></app-skills>
+      <app-education *ngSwitchCase="'education'" (themeToggle)="onToggleTheme($event)"></app-education>
+      <app-contact *ngSwitchCase="'contact'" (themeToggle)="onToggleTheme($event)"></app-contact>
+    </ng-container>
+  </div>

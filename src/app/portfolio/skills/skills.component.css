@@ -1,0 +1,54 @@
+.skill-card {
+    background: #1a1a1a;
+    color: #fff;
+    border: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 250px; /* Fixed height */
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for lifting */
+.skill-card:hover {
+    transform: translateY(-10px); /* Adds hover lift effect */
+}
+
+/* Border animation keyframes */
+@keyframes borderAnimation {
+    0% {
+        border-top: 2px solid transparent;
+        border-left: 2px solid transparent;
+        border-right: 2px solid transparent;
+        border-bottom: 2px solid #f0ad4e; /* Start at the bottom-right corner */
+    }
+    25% {
+        border-top: 2px solid transparent;
+        border-left: 2px solid transparent;
+        border-right: 2px solid transparent; /* Move to bottom-left corner */
+        border-bottom: 2px solid #f0ad4e;
+    }
+    50% {
+        border-top: 2px solid transparent; /* Move to top-left corner */
+        border-left: 2px solid #f0ad4e;
+        border-right: 2px solid transparent;
+        border-bottom: 2px solid #f0ad4e;
+    }
+    75% {
+        border-top: 2px solid #f0ad4e;
+        border-left: 2px solid #f0ad4e;
+        border-right: 2px solid transparent;
+        border-bottom: 2px solid #f0ad4e;
+    }
+    100% {
+        border-top: 2px solid #f0ad4e; /* Return to bottom-right corner */
+        border-left: 2px solid transparent;
+        border-right: 2px solid #f0ad4e;
+        border-bottom: 2px solid #f0ad4e;
+    }
+}
+
+/* Apply the animation only when hovered */
+.skill-card:hover {
+    animation: borderAnimation 1s infinite; /* Loop the animation */
+}

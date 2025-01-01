@@ -1,0 +1,55 @@
+<div [ngClass]="'text-white'" [style.background]="toggleState ? 'rgb(36, 43, 46)' : 'rgb(36, 43, 46)'">
+  <nav class="navbar navbar-expand-lg navbar-dark px-4">
+    <!-- Brand -->
+    <a class="navbar-brand" (click)="scrollToSection('home')" ngNonBindable>
+      {{ 'Sachin Yadav' }}
+    </a>
+
+    <!-- Toggler Button (Three Dots) -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Navbar Content -->
+    <div class="collapse navbar-collapse text-center" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" (click)="navigateAndClose('home')">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="navigateAndClose('about')">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="navigateAndClose('skills')">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="navigateAndClose('education')">Education</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="navigateAndClose('contact')">Contact</a>
+        </li>
+      </ul>
+      <!-- Toggle Button for Theme -->
+      <div class="form-check form-switch ms-lg-3 mt-3 mt-lg-0">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="themeSwitch"
+          (change)="toggleTheme()"
+          [checked]="toggleState"
+        />
+        <label class="form-check-label" for="themeSwitch">
+          {{ toggleState ? '🌞' : '🌙' }}
+        </label>
+      </div>
+    </div>
+  </nav>
+</div>
