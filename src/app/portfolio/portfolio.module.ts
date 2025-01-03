@@ -10,7 +10,6 @@ import { ExperienceComponent } from './experience/experience.component';
 import { SkillsComponent } from './skills/skills.component';
 import { EducationComponent } from './education/education.component';
 import { ContactComponent } from './contact/contact.component';
-import { TrimStringPipe } from './pipes/trim-string.pipe';
 
 
 @NgModule({
@@ -23,7 +22,6 @@ import { TrimStringPipe } from './pipes/trim-string.pipe';
     SkillsComponent,
     EducationComponent,
     ContactComponent,
-    TrimStringPipe
   ],
   imports: [
     CommonModule,
