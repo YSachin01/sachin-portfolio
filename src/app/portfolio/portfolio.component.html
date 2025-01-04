@@ -22,6 +22,6 @@
       <app-experience *ngSwitchCase="'experience'" (themeToggle)="onToggleTheme($event)"></app-experience>
       <app-skills *ngSwitchCase="'skills'" (themeToggle)="onToggleTheme($event)"></app-skills>
       <app-education *ngSwitchCase="'education'" (themeToggle)="onToggleTheme($event)"></app-education>
-      <app-contact *ngSwitchCase="'contact'" (themeToggle)="onToggleTheme($event)"></app-contact>
+      <app-contact *ngSwitchCase="'contact'" (themeToggle)="onToggleTheme($event)" [toggleState]="toggleState"></app-contact>
     </ng-container>
   </div>
