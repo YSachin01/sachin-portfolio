@@ -1,42 +1,19 @@
-<!-- Skills Section -->
 <section id="skills" class="py-5">
-  <div class="container">
-    <h2 class="text-center text-warning mb-5">
-      <i class="fas fa-code text-warning me-2"></i> Skills
-    </h2>
-    <div class="row justify-content-center">
-      <!-- Web Technologies -->
-      <div class="col-md-4 col-12 mb-4" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-        <div class="card text-center skill-card h-100">
-          <div class="card-body">
-            <h5 class="card-title text-warning">Web Technologies</h5>
-            <p class="card-text">HTML, CSS & PHP</p>
-            <p class="card-text">Frameworks & Libraries: Angular, Laravel, Opencart, Bootstrap</p>
-          </div>
+    <div class="container">
+        <h2 class="text-center mb-5" [ngClass]="toggleState ? 'text-primary' : 'text-warning'">
+            <i class="fas fa-code me-2"></i> Skills
+        </h2>
+        <div class="d-flex flex-wrap justify-content-center">
+            <div class="card text-center skill-card h-100" *ngFor="let skill of skills" [ngClass]="toggleState ? 'bg-light text-dark' : 'bg-dark text-white'" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                <div class="card-body" [ngClass]="{'border-primary': toggleState,'border-warning': !toggleState}" style="border: 2px solid; padding: 20px;">
+                    <h5 class="card-title" [ngClass]="toggleState ? 'text-primary' : 'text-warning'">
+                        {{ skill.title }}
+                    </h5>
+                    <div *ngFor="let detail of skill.details">
+                        <p class="card-text">{{ detail }}</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <!-- Scripting Languages -->
-      <div class="col-md-4 col-12 mb-4" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-        <div class="card text-center skill-card h-100">
-          <div class="card-body">
-            <h5 class="card-title text-warning">Scripting Languages</h5>
-            <p class="card-text">JavaScript & jQuery</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tools -->
-      <div class="col-md-4 col-12 mb-4" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-        <div class="card text-center skill-card h-100">
-          <div class="card-body">
-            <h5 class="card-title text-warning">Tools & Databases</h5>
-            <p class="card-text">MantisBT, Trello, Redis</p>
-            <p class="card-text">Git, BitBucket,GitHub</p>
-            <p class="card-text">MySQL, MongoDB</p>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
