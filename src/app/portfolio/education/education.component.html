@@ -1,40 +1,18 @@
 <section id="education" class="py-5">
-    <div class="container">
-        <h1 class="heading text-center mb-5 text-warning"><i class="fas fa-graduation-cap"></i> Education</h1>
-        <div class="row justify-content-center">
-            <!-- B.Sc.IT -->
-            <div class="col-md-6 col-12 mb-4">
-                <div class="card h-auto border-primary">
-                    <div class="card-body">
-                        <h2 class="card-title" >2022</h2>
-                        <h3 class="card-subtitle mb-2 text-warning">B.Sc.IT</h3>
-                        <p class="card-text">University of Mumbai</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- HSC -->
-            <div class="col-md-6 col-12 mb-4">
-                <div class="card h-auto border-primary">
-                    <div class="card-body">
-                        <h2 class="card-title" >2019</h2>
-                        <h3 class="card-subtitle mb-2 text-warning">HSC</h3>
-                        <p class="card-text">Lokmanya Junior College, NSP</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SSC -->
-            <div class="col-md-6 col-12 mb-4">
-                <div class="card h-auto border-primary card">
-                    <div class="card-body">
-                        <h2 class="card-title" >2017</h2>
-                        <h3 class="card-subtitle mb-2 text-warning">SSC</h3>
-                        <p class="card-text">Lokmanya High School, NSP</p>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <h1 class="heading text-center mb-5" [ngClass]="toggleState ? 'text-primary' : 'text-warning'">
+      <i class="fas fa-graduation-cap"></i> Education
+    </h1>
+    <div class="row justify-content-center">
+      <div *ngFor="let edu of education" class="col-md-6 col-12 mb-4" data-aos="zoom-in-up" data-aos-duration="2000">
+        <div class="card h-auto" [ngClass]="{'border-primary': toggleState, 'border-warning': !toggleState}">
+          <div class="card-body">
+            <h2 class="card-title" [ngClass]="toggleState ? 'text-dark' : 'text-white'">{{ edu.year }}</h2>
+            <h3 class="card-subtitle mb-2" [ngClass]="toggleState ? 'text-primary' : 'text-warning'">{{ edu.degree }}</h3>
+            <p class="card-text" [ngClass]="toggleState ? 'text-dark' : 'text-white'">{{ edu.institution }}</p>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
-

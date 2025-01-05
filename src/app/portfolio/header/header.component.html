@@ -1,7 +1,7 @@
 <div [ngClass]="'text-white'" [style.background]="toggleState ? 'rgb(36, 43, 46)' : 'rgb(36, 43, 46)'">
   <nav class="navbar navbar-expand-lg navbar-dark px-4">
     <!-- Brand -->
-    <a class="navbar-brand" (click)="scrollToSection('home')" ngNonBindable>
+    <a class="navbar-brand" (click)="scrollToSection('home')" [ngClass]="toggleState ? 'text-primary' : 'text-warning'" ngNonBindable>
       {{ Sachin Yadav }}
     </a>
 
@@ -26,6 +26,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" (click)="navigateAndClose('about')">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="navigateAndClose('experience')">Experience</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" (click)="navigateAndClose('skills')">Skills</a>
