@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+declare let AOS: any;
 
 @Component({
   selector: 'app-experience',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./experience.component.css']
 })
 export class ExperienceComponent {
-
+  ngOnInit(): void {
+    AOS.init(); // Initialize AOS
+  }
 }
