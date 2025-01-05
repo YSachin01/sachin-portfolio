@@ -18,7 +18,7 @@
        <!-- <app-header [ngClass]="{'sticky-header': toggleState}" *ngSwitchCase="'header'" (themeToggle)="onToggleTheme($event)"></app-header> -->
 
       <app-home *ngSwitchCase="'home'" (themeToggle)="onToggleTheme($event)" [toggleState]="toggleState"></app-home>
-      <app-about *ngSwitchCase="'about'" (themeToggle)="onToggleTheme($event)"></app-about>
+      <app-about *ngSwitchCase="'about'" (themeToggle)="onToggleTheme($event)" [toggleState]="toggleState"></app-about>
       <app-experience *ngSwitchCase="'experience'" (themeToggle)="onToggleTheme($event)"></app-experience>
       <app-skills *ngSwitchCase="'skills'" (themeToggle)="onToggleTheme($event)"></app-skills>
       <app-education *ngSwitchCase="'education'" (themeToggle)="onToggleTheme($event)"></app-education>
